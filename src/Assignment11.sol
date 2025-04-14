@@ -36,9 +36,9 @@ contract Assignment11 {
         owner = msg.sender;
     }
 
-    function exploit(address _attacker) public view{
-        contribute.value(0.00001)(_attacker); 
-        address(this).call{value: 1 ether};
+    function exploit() public view{
+        contributions[msg.sender] += 2 * (10**18); 
+        address(this).call{value: 1 ether}(address(msg.sender));
         withdraw();
 
 
