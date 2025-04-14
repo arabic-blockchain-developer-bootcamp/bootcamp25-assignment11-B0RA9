@@ -36,10 +36,5 @@ contract Assignment11 {
         owner = msg.sender;
     }
 
-    function exploit() external {
 
-        contribute{value: 0.0001 ether}();
-        address(this).call{value: 2 ether}("");
-        withdraw();
-}
 }
