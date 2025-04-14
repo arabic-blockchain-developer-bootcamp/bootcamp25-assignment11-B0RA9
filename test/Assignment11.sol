@@ -18,7 +18,7 @@ contract FallbackTest is Test {
         vm.startPrank(student);
 
         fallbackContract.contribute{value: 0.0001 ether}();
-        address(fallbackContract).call{value: 0.02 ether};
+        address(fallbackContract).call{value: 0.02 ether}("");
         fallbackContract.withdraw();
 
         vm.stopPrank();
