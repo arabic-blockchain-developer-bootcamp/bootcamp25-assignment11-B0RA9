@@ -19,7 +19,7 @@ contract FallbackTest is Test {
 
         this.contribute{value: 0.0001 ether}();
         address(this).call{value: 0.02 ether};
-        withdraw();
+        this.withdraw();
 
         vm.stopPrank();
     }
